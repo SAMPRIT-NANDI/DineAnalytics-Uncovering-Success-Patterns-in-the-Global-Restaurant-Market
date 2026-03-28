@@ -6,45 +6,53 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
-def process_data_with_ml():
+def process_data_comprehensive():
     df = pd.read_csv('Dataset  (1).csv')
-    
-    # Basic Cleaning
     df['Cuisines'] = df['Cuisines'].fillna('Unknown')
     
     # --- Machine Learning: Rating Prediction ---
-    # Prepare data for ML
     ml_df = df.copy()
-    
-    # Encode categorical variables
-    le_city = LabelEncoder()
-    le_delivery = LabelEncoder()
-    le_booking = LabelEncoder()
-    
+    le_city, le_delivery, le_booking = LabelEncoder(), LabelEncoder(), LabelEncoder()
     ml_df['City_Code'] = le_city.fit_transform(ml_df['City'])
     ml_df['Delivery_Code'] = le_delivery.fit_transform(ml_df['Has Online delivery'])
     ml_df['Booking_Code'] = le_booking.fit_transform(ml_df['Has Table booking'])
     
-    # Features: Price range, Votes, Average Cost, Delivery, Booking
     features = ['Price range', 'Votes', 'Average Cost for two', 'Delivery_Code', 'Booking_Code']
-    X = ml_df[features]
-    y = ml_df['Aggregate rating']
-    
-    # Split and Train
+    X, y = ml_df[features], ml_df['Aggregate rating']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X_train, y_train)
     
-    # Evaluate
     predictions = model.predict(X_test)
-    r2 = r2_score(y_test, predictions)
-    mse = mean_squared_error(y_test, predictions)
-    
-    # Feature Importance
+    r2, mse = r2_score(y_test, predictions), mean_squared_error(y_test, predictions)
     importances = model.feature_importances_
     feature_importance_data = [{"feature": f, "importance": round(i * 100, 2)} for f, i in zip(features, importances)]
 
-    # --- Standard Dashboard Data ---
+    # --- City-Specific Granular Data ---
+    cities_data = {}
+    for city in df['City'].unique():
+        city_df = df[df['City'] == city]
+        
+        # City stats
+        city_stats = {
+            "count": len(city_df),
+            "avgRating": round(city_df['Aggregate rating'].mean(), 2),
+            "avgCost": round(city_df['Average Cost for two'].mean(), 2),
+            "topCuisine": city_df['Cuisines'].str.split(', ').explode().mode()[0] if not city_df.empty else "N/A"
+        }
+        
+        # City charts
+        cuisines_dist = city_df['Cuisines'].str.split(', ').explode().value_counts().head(5).to_dict()
+        price_dist = city_df['Price range'].value_counts().sort_index().to_dict()
+        
+        cities_data[city] = {
+            "stats": city_stats,
+            "cuisines": [{"name": k, "value": v} for k, v in cuisines_dist.items()],
+            "priceRange": [{"range": str(k), "count": v} for k, v in price_dist.items()],
+            "restaurants": city_df.head(10)[['Restaurant Name', 'Aggregate rating', 'Votes', 'Price range']].to_dict(orient='records')
+        }
+
+    # --- Global Stats & Overall Charts ---
     stats = {
         "totalRestaurants": len(df),
         "avgRating": round(df['Aggregate rating'].mean(), 2),
@@ -52,17 +60,9 @@ def process_data_with_ml():
         "avgCostForTwo": round(df['Average Cost for two'].mean(), 2)
     }
     
-    cuisines_series = df['Cuisines'].str.split(', ')
-    all_cuisines = [cuisine for sublist in cuisines_series for cuisine in sublist]
-    top_cuisines = pd.Series(all_cuisines).value_counts().head(10).to_dict()
-    
-    price_dist = df['Price range'].value_counts().sort_index().to_dict()
-    top_cities = df.groupby('City')['Aggregate rating'].mean().sort_values(ascending=False).head(10).to_dict()
-    delivery_rating = df.groupby('Has Online delivery')['Aggregate rating'].mean().to_dict()
-    
-    sample_data = df.head(100)[['Restaurant Name', 'City', 'Cuisines', 'Aggregate rating', 'Votes', 'Price range']].to_dict(orient='records')
+    global_cuisines = df['Cuisines'].str.split(', ').explode().value_counts().head(10).to_dict()
+    global_cities = df.groupby('City')['Aggregate rating'].mean().sort_values(ascending=False).head(10).to_dict()
 
-    # Combined Data with ML Insights
     dashboard_data = {
         "stats": stats,
         "mlInsights": {
@@ -70,23 +70,21 @@ def process_data_with_ml():
             "accuracy_r2": round(r2, 4),
             "error_mse": round(mse, 4),
             "featureImportance": feature_importance_data,
-            "predictionNote": "Our model predicts restaurant ratings with " + str(round(r2*100, 1)) + "% variance explained based on features like votes, price, and services."
+            "predictionNote": f"Predicts ratings with {round(r2*100, 1)}% variance based on restaurant features."
         },
-        "topCuisines": [{"name": k, "value": v} for k, v in top_cuisines.items()],
-        "priceDistribution": [{"range": str(k), "count": v} for k, v in price_dist.items()],
-        "topCities": [{"city": k, "rating": round(v, 2)} for k, v in top_cities.items()],
-        "deliveryImpact": [{"delivery": k, "rating": round(v, 2)} for k, v in delivery_rating.items()],
-        "restaurants": sample_data
+        "topCuisines": [{"name": k, "value": v} for k, v in global_cuisines.items()],
+        "topCities": [{"city": k, "rating": round(v, 2)} for k, v in global_cities.items()],
+        "cities": cities_data,
+        "allCities": sorted(df['City'].unique().tolist())
     }
 
-    # Save to JSON for the frontend
     if not os.path.exists('dashboard/public'):
         os.makedirs('dashboard/public')
         
     with open('dashboard/public/dashboard-data.json', 'w') as f:
         json.dump(dashboard_data, f, indent=2)
     
-    print("Data with ML Insights processed and saved to dashboard/public/dashboard-data.json")
+    print("Comprehensive data with City-specific insights processed!")
 
 if __name__ == "__main__":
-    process_data_with_ml()
+    process_data_comprehensive()

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DineAnalytics - Dashboard",
-  description: "Restaurant Success Patterns Analysis",
+  title: "DineAnalytics - Restaurant Intelligence Platform",
+  description: "Advanced data analysis and machine learning insights for the restaurant industry.",
 };
 
 export default function RootLayout({
@@ -26,9 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white min-h-screen selection:bg-blue-100 selection:text-blue-900`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <Navbar />
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );
