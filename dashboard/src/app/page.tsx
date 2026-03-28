@@ -497,6 +497,10 @@ function GlobalView({ data, onCitySelect }: { data: DashboardData, onCitySelect:
 }
 
 function CityView({ city, cityData, onCompare, onBack, onEmailRequest }: { city: string, cityData: CityData, onCompare: (city: string) => void, onBack: () => void, onEmailRequest: () => void }) {
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <div className="space-y-12 animate-in fade-in zoom-in-95 duration-700">
       <div className="flex flex-col md:flex-row md:items-center gap-8 no-print">
@@ -519,10 +523,16 @@ function CityView({ city, cityData, onCompare, onBack, onEmailRequest }: { city:
             Compare Hub
           </button>
           <button 
-            onClick={onEmailRequest}
+            onClick={handlePrint}
             className="px-8 py-4 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase shadow-sm hover:bg-slate-50 transition-all active:scale-95 flex items-center gap-3"
           >
-            <Mail className="w-4 h-4" /> Dispatch Report
+            <Download className="w-4 h-4" /> Save as PDF
+          </button>
+          <button 
+            onClick={onEmailRequest}
+            className="px-8 py-4 bg-[#FACC15] text-slate-900 rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase shadow-xl hover:bg-slate-900 hover:text-white transition-all active:scale-95 flex items-center gap-3"
+          >
+            <Mail className="w-4 h-4" /> Email Report
           </button>
         </div>
       </div>
