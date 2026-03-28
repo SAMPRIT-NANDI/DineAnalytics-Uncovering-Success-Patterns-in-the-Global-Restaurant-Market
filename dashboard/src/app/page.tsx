@@ -10,7 +10,7 @@ import {
   Utensils, MapPin, Star, TrendingUp, ShoppingBag, DollarSign,
   Search, Filter, ChevronRight, BrainCircuit, Target, Info, LogOut, User,
   ArrowLeftRight, FileText, Download, Send, Globe, Zap, AlertCircle, X, Mail, CheckCircle2,
-  TrendingDown, Activity, Layers, Smartphone
+  TrendingDown, Activity, Layers, Smartphone, Sparkles
 } from 'lucide-react';
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
