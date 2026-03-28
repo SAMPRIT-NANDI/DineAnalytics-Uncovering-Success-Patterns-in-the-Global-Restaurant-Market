@@ -138,12 +138,12 @@ export default function Dashboard() {
     return (
       <div className="flex flex-col items-center justify-center min-h-[80vh] bg-white">
         <div className="relative">
-          <div className="w-32 h-32 border-4 border-slate-100 border-t-blue-600 rounded-full animate-[spin_1.5s_linear_infinite]"></div>
+          <div className="w-32 h-32 border-4 border-slate-100 border-t-[#FACC15] rounded-full animate-[spin_1.5s_linear_infinite]"></div>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative">
-              <Utensils className="w-10 h-10 text-blue-600 animate-bounce" />
+              <Utensils className="w-10 h-10 text-slate-900 animate-bounce" />
               <div className="absolute -top-4 -right-4">
-                <Sparkles className="w-6 h-6 text-amber-400 animate-pulse" />
+                <Sparkles className="w-6 h-6 text-[#FACC15] animate-pulse" />
               </div>
             </div>
           </div>
@@ -157,19 +157,27 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-12 pb-20 relative bg-white min-h-screen">
+    <div className="space-y-12 pb-20 relative bg-white min-h-screen overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-screen bg-[#111111] -z-10 rounded-l-[10rem] translate-x-1/4 animate-fade-in duration-1000"></div>
+      
+      {/* Floating Elements (Image 2 style) */}
+      <div className="absolute top-40 right-1/4 w-12 h-12 -z-5 animate-float opacity-20">
+         <img src="https://cdn-icons-png.flaticon.com/512/2346/2346856.png" className="w-full h-full object-contain rotate-45" alt="leaf" />
+      </div>
+      <div className="absolute bottom-40 left-10 w-16 h-16 -z-5 animate-float opacity-10 delay-1000">
+         <img src="https://cdn-icons-png.flaticon.com/512/2346/2346856.png" className="w-full h-full object-contain -rotate-12" alt="leaf" />
+      </div>
+
       {/* Header & Controls */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pt-8 no-print">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pt-8 no-print px-4 sm:px-6 lg:px-8">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className={`px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] shadow-2xl ${
-              viewMode === 'global' ? 'bg-blue-600 text-white shadow-blue-200' : 
-              viewMode === 'city' ? 'bg-slate-900 text-white shadow-slate-200' : 'bg-indigo-600 text-white shadow-indigo-200'
-            }`}>
+            <div className="px-5 py-2 bg-[#FACC15] text-slate-900 rounded-full text-[10px] font-black uppercase tracking-[0.3em] shadow-xl">
               {viewMode} Mode
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-black text-slate-400 uppercase tracking-widest">
-              <Activity className="w-3.5 h-3.5 text-blue-500" /> Live Market Data
+              <Activity className="w-3.5 h-3.5 text-emerald-500" /> Live Market Data
             </div>
           </div>
           <h1 className="text-7xl font-black text-slate-900 tracking-tighter leading-[0.85]">
@@ -186,13 +194,13 @@ export default function Dashboard() {
 
         <div className="flex flex-wrap items-center gap-4">
           <div className="relative flex-1 min-w-[380px] group">
-            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-300 w-5 h-5 group-focus-within:text-blue-600 transition-colors" />
+            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-300 w-5 h-5 group-focus-within:text-[#FACC15] transition-colors" />
             <input 
               type="text" 
               placeholder="Search 400+ cities..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-16 pr-8 py-5 bg-slate-50 border-2 border-slate-50 rounded-[2rem] text-sm font-black text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-0 focus:bg-white focus:border-blue-600 transition-all shadow-sm group-hover:bg-slate-100/50"
+              className="w-full pl-16 pr-8 py-5 bg-slate-50 border-2 border-slate-50 rounded-[2rem] text-sm font-black text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-0 focus:bg-white focus:border-[#FACC15] transition-all shadow-sm group-hover:bg-slate-100/50"
             />
             {searchResults.length > 0 && (
               <div className="absolute top-full left-0 w-full bg-white mt-4 rounded-[2.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] border border-slate-100 z-[60] overflow-hidden py-4 animate-in fade-in slide-in-from-top-4">
@@ -203,7 +211,7 @@ export default function Dashboard() {
                     className="w-full text-left px-10 py-5 hover:bg-blue-50 text-sm font-black text-slate-600 hover:text-blue-600 flex items-center justify-between group/item transition-all"
                   >
                     {city}
-                    <ChevronRight className="w-5 h-5 text-slate-200 group-hover/item:text-blue-600 group-hover/item:translate-x-2 transition-all" />
+                    <ChevronRight className="w-5 h-5 text-slate-200 group-hover/item:text-[#FACC15] group-hover/item:translate-x-2 transition-all" />
                   </button>
                 ))}
               </div>
@@ -233,7 +241,7 @@ export default function Dashboard() {
       <div className="h-px w-full bg-slate-100 no-print"></div>
 
       {/* Main Content Area */}
-      <div className="animate-in fade-in duration-1000">
+      <div className="animate-in fade-in duration-1000 px-4 sm:px-6 lg:px-8">
         {viewMode === "global" ? (
           <GlobalView data={data} onCitySelect={handleCitySelect} />
         ) : viewMode === "city" ? (
@@ -337,14 +345,14 @@ function GlobalView({ data, onCitySelect }: { data: DashboardData, onCitySelect:
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
         <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
           {[
-            { label: "Venues Scoped", value: data.stats.totalRestaurants.toLocaleString(), icon: Utensils, color: "blue", trend: "+12% Growth" },
-            { label: "Aggregate Rating", value: data.stats.avgRating, icon: Star, color: "amber", trend: "High Stability" },
+            { label: "Venues Scoped", value: data.stats.totalRestaurants.toLocaleString(), icon: Utensils, color: "slate", trend: "+12% Growth" },
+            { label: "Aggregate Rating", value: data.stats.avgRating, icon: Star, color: "yellow", trend: "High Stability" },
             { label: "Public Votes", value: data.stats.totalVotes.toLocaleString(), icon: TrendingUp, color: "emerald", trend: "Massive Engagement" },
-            { label: "Mean Cost (2)", value: `₹${data.stats.avgCostForTwo.toLocaleString()}`, icon: DollarSign, color: "indigo", trend: "Market Median" },
+            { label: "Mean Cost (2)", value: `₹${data.stats.avgCostForTwo.toLocaleString()}`, icon: DollarSign, color: "slate", trend: "Market Median" },
           ].map((stat, i) => (
-            <div key={i} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:border-blue-100 hover:shadow-2xl hover:shadow-blue-500/5 transition-all group overflow-hidden relative">
+            <div key={i} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:border-[#FACC15] hover:shadow-2xl transition-all group overflow-hidden relative">
               <div className="relative z-10 flex justify-between items-start">
-                <div className={`p-4 bg-${stat.color}-50 text-${stat.color}-600 rounded-3xl mb-8 group-hover:scale-110 group-hover:bg-slate-900 group-hover:text-white transition-all duration-500 shadow-sm`}>
+                <div className={`p-4 ${stat.color === 'yellow' ? 'bg-[#FACC15] text-slate-900' : 'bg-slate-50 text-slate-600'} rounded-3xl mb-8 group-hover:scale-110 transition-all duration-500 shadow-sm`}>
                   <stat.icon className="w-8 h-8" />
                 </div>
                 <div className="px-4 py-1.5 bg-slate-50 border border-slate-100 rounded-full text-[9px] font-black uppercase tracking-widest text-slate-400">
@@ -353,43 +361,38 @@ function GlobalView({ data, onCitySelect }: { data: DashboardData, onCitySelect:
               </div>
               <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] relative z-10">{stat.label}</p>
               <h3 className="text-5xl font-black text-slate-900 mt-2 relative z-10 tracking-tighter">{stat.value}</h3>
-              <div className={`absolute -right-4 -bottom-4 w-32 h-32 bg-${stat.color}-50 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 scale-0 group-hover:scale-150`}></div>
             </div>
           ))}
         </div>
 
-        <div className="lg:col-span-4 bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden flex flex-col justify-between group shadow-2xl shadow-slate-200">
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop" 
-              alt="Professional Kitchen" 
-              className="w-full h-full object-cover opacity-30 group-hover:scale-110 transition-transform duration-[3s]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-          </div>
+        <div className="lg:col-span-4 bg-white rounded-[3rem] p-12 relative overflow-hidden flex flex-col justify-between group shadow-2xl shadow-slate-200 border border-slate-100">
           <div className="relative z-10 space-y-8">
-            <div className="flex items-center gap-5">
-              <div className="p-5 bg-blue-600 rounded-2xl shadow-2xl shadow-blue-500/40">
-                <BrainCircuit className="w-10 h-10" />
-              </div>
-              <div>
-                <h4 className="text-3xl font-black tracking-tight leading-none">AI Insight</h4>
-                <p className="text-blue-400 text-[10px] font-black uppercase tracking-[0.3em] mt-2">Modeling Confidence: 94%</p>
-              </div>
+            <div className="space-y-2">
+              <span className="text-[#ef4444] font-black uppercase tracking-[0.3em] text-[10px]">Chef's Special Insight</span>
+              <h4 className="text-4xl font-black text-slate-900 tracking-tighter leading-none">Market Freshness.</h4>
             </div>
-            <p className="text-slate-300 text-xl font-medium leading-relaxed italic">
+            <p className="text-slate-500 text-lg font-medium leading-relaxed">
               "The strongest predictor of success across all cities is <strong>Service Hybridization</strong>—venues offering both Table Booking and Online Delivery consistently outperform peers by 22%."
             </p>
+            <div className="pt-4">
+               <button className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase hover:bg-[#FACC15] hover:text-slate-900 transition-all">
+                  Download Report
+               </button>
+            </div>
           </div>
-          <div className="relative z-10 pt-10 flex gap-4">
-            <div className="flex-1 bg-white/5 border border-white/10 p-5 rounded-2xl backdrop-blur-md">
-              <p className="text-[9px] font-black text-blue-400 uppercase tracking-widest mb-2">R² Score</p>
-              <p className="text-2xl font-black">{Math.round(data.mlInsights.accuracy_r2 * 100)}%</p>
-            </div>
-            <div className="flex-1 bg-white/5 border border-white/10 p-5 rounded-2xl backdrop-blur-md">
-              <p className="text-[9px] font-black text-blue-400 uppercase tracking-widest mb-2">MSE Index</p>
-              <p className="text-2xl font-black">{data.mlInsights.error_mse}</p>
-            </div>
+          
+          {/* Circular Food Image (Image 2 style) */}
+          <div className="absolute -bottom-10 -right-10 w-64 h-64 group-hover:scale-110 transition-transform duration-1000">
+             <div className="relative w-full h-full">
+                <img 
+                  src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1000&auto=format&fit=crop" 
+                  className="w-full h-full object-cover rounded-full border-[1rem] border-white shadow-2xl"
+                  alt="Food Plate"
+                />
+                <div className="absolute top-0 right-0 w-16 h-16 animate-float">
+                   <img src="https://cdn-icons-png.flaticon.com/512/2346/2346856.png" className="w-full h-full object-contain" alt="leaf" />
+                </div>
+             </div>
           </div>
         </div>
       </div>
@@ -498,26 +501,26 @@ function CityView({ city, cityData, onCompare, onBack, onEmailRequest }: { city:
     <div className="space-y-12 animate-in fade-in zoom-in-95 duration-700">
       <div className="flex flex-col md:flex-row md:items-center gap-8 no-print">
         <div className="flex items-center gap-6">
-          <button onClick={onBack} className="p-5 bg-white border-2 border-slate-100 rounded-3xl hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all shadow-sm group">
-            <ArrowLeftRight className="w-6 h-6 rotate-180 group-hover:-translate-x-1 transition-transform" />
+          <button onClick={onBack} className="p-5 bg-white border-2 border-slate-100 rounded-3xl hover:bg-[#FACC15] hover:border-[#FACC15] transition-all shadow-sm group">
+            <ArrowLeftRight className="w-6 h-6 rotate-180 group-hover:scale-110 transition-transform" />
           </button>
           <div className="space-y-1">
             <h2 className="text-5xl font-black text-slate-900 tracking-tighter leading-none">{city}</h2>
             <p className="text-slate-400 font-black uppercase tracking-[0.3em] text-[10px] flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-blue-600" /> Location Intelligence Report
+              <MapPin className="w-3.5 h-3.5 text-[#FACC15]" /> Location Intelligence Report
             </p>
           </div>
         </div>
         <div className="flex items-center gap-4 ml-auto">
           <button 
             onClick={() => onCompare(city)}
-            className="px-8 py-4 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase hover:bg-slate-900 hover:text-white transition-all active:scale-95 shadow-sm"
+            className="px-8 py-4 bg-[#111111] text-white rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase hover:bg-[#FACC15] hover:text-slate-900 transition-all active:scale-95 shadow-xl"
           >
             Compare Hub
           </button>
           <button 
             onClick={onEmailRequest}
-            className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase shadow-2xl shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95 flex items-center gap-3"
+            className="px-8 py-4 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-[10px] tracking-[0.2em] uppercase shadow-sm hover:bg-slate-50 transition-all active:scale-95 flex items-center gap-3"
           >
             <Mail className="w-4 h-4" /> Dispatch Report
           </button>
@@ -527,13 +530,13 @@ function CityView({ city, cityData, onCompare, onBack, onEmailRequest }: { city:
       {/* City Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {[
-          { label: "Market Density", value: cityData.stats.count, icon: Utensils, color: "blue", suffix: "Venues" },
-          { label: "Quality Index", value: cityData.stats.avgRating, icon: Star, color: "amber", suffix: "/ 5.0" },
-          { label: "Economic Index", value: `₹${cityData.stats.avgCost}`, icon: DollarSign, color: "indigo", suffix: "Avg (2)" },
+          { label: "Market Density", value: cityData.stats.count, icon: Utensils, color: "slate", suffix: "Venues" },
+          { label: "Quality Index", value: cityData.stats.avgRating, icon: Star, color: "yellow", suffix: "/ 5.0" },
+          { label: "Economic Index", value: `₹${cityData.stats.avgCost}`, icon: DollarSign, color: "slate", suffix: "Avg (2)" },
           { label: "Top Segment", value: cityData.stats.topCuisine, icon: ShoppingBag, color: "emerald", suffix: "Cuisine" },
         ].map((stat, i) => (
-          <div key={i} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-2xl hover:border-blue-100 transition-all">
-            <div className={`p-4 bg-${stat.color}-50 text-${stat.color}-600 rounded-2xl w-fit mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+          <div key={i} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-2xl hover:border-[#FACC15] transition-all">
+            <div className={`p-4 ${stat.color === 'yellow' ? 'bg-[#FACC15] text-slate-900' : 'bg-slate-50 text-slate-600'} rounded-2xl w-fit mb-6 group-hover:scale-110 transition-all duration-500`}>
               <stat.icon className="w-6 h-6" />
             </div>
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] relative z-10">{stat.label}</p>
@@ -543,46 +546,58 @@ function CityView({ city, cityData, onCompare, onBack, onEmailRequest }: { city:
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+        <div className="lg:col-span-8 bg-white p-12 rounded-[3.5rem] shadow-sm border border-slate-100">
           <div className="flex justify-between items-center mb-10">
-            <h4 className="text-2xl font-black text-slate-900 tracking-tight">Cuisine Penetration</h4>
-            <div className="p-3 bg-blue-50 text-blue-600 rounded-2xl"><Activity className="w-5 h-5" /></div>
+            <div className="space-y-1">
+               <span className="text-[#ef4444] font-black uppercase tracking-[0.3em] text-[10px]">Chef's Selection</span>
+               <h4 className="text-3xl font-black text-slate-900 tracking-tighter">Cuisine Penetration</h4>
+            </div>
+            <div className="p-4 bg-slate-50 text-slate-900 rounded-2xl"><Activity className="w-6 h-6" /></div>
           </div>
-          <div className="h-[350px]">
+          <div className="h-[400px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={cityData.cuisines}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="name" tick={{ fontSize: 11, fontWeight: 900, fill: '#1e293b' }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fontSize: 11, fontWeight: 700 }} axisLine={false} tickLine={false} />
+                <XAxis dataKey="name" tick={{ fontSize: 10, fontWeight: 900, fill: '#64748b' }} axisLine={false} tickLine={false} />
+                <YAxis tick={{ fontSize: 10, fontWeight: 700 }} axisLine={false} tickLine={false} />
                 <Tooltip contentStyle={{ borderRadius: '24px', border: 'none', boxShadow: '0 25px 50px -12px rgb(0 0 0 / 0.25)' }} />
-                <Bar dataKey="value" fill="#3b82f6" radius={[10, 10, 0, 0]} barSize={45} />
+                <Bar dataKey="value" fill="#111111" radius={[10, 10, 0, 0]} barSize={45} />
               </BarChart>
             </ResponsiveContainer>
           </div>
         </div>
 
-        <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 flex flex-col items-center">
-          <div className="w-full flex justify-between items-center mb-10">
-            <h4 className="text-2xl font-black text-slate-900 tracking-tight text-center w-full">Economic Spread</h4>
-          </div>
-          <div className="h-[350px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={cityData.priceRange}
-                  cx="50%" cy="50%" innerRadius={80} outerRadius={120} paddingAngle={10}
-                  dataKey="count" nameKey="range" label={({ range }) => `₹`.repeat(Number(range))}
-                >
-                  {cityData.priceRange.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip contentStyle={{ borderRadius: '24px' }} />
-                <Legend iconType="circle" />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
+        <div className="lg:col-span-4 bg-[#111111] rounded-[3.5rem] p-12 text-white relative overflow-hidden flex flex-col justify-between group shadow-2xl">
+           <div className="absolute top-0 right-0 p-12 opacity-5">
+              <Zap className="w-64 h-64" />
+           </div>
+           <div className="relative z-10 space-y-8">
+              <div className="space-y-2">
+                 <span className="text-[#FACC15] font-black uppercase tracking-[0.3em] text-[10px]">Strategic Matrix</span>
+                 <h4 className="text-4xl font-black tracking-tighter leading-none">Economic Spread.</h4>
+              </div>
+              <p className="text-slate-400 text-lg font-medium leading-relaxed">
+                 The pricing logic for {city} aligns with mass-market accessibility. Maximum share is captured in Price Range {cityData.priceRange.sort((a,b) => b.count - a.count)[0]?.range}.
+              </p>
+           </div>
+           
+           <div className="relative z-10 h-48 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={cityData.priceRange}
+                    cx="50%" cy="50%" innerRadius={40} outerRadius={70} paddingAngle={8}
+                    dataKey="count" nameKey="range"
+                  >
+                    {cityData.priceRange.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip contentStyle={{ borderRadius: '24px', color: '#000' }} />
+                </PieChart>
+              </ResponsiveContainer>
+           </div>
         </div>
       </div>
 
@@ -665,8 +680,8 @@ function ComparisonView({ city1, city2, data1, data2, onBack }: { city1: string,
   return (
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
        <div className="flex items-center gap-6">
-        <button onClick={onBack} className="p-5 bg-white border-2 border-slate-100 rounded-3xl hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all shadow-sm group">
-          <ArrowLeftRight className="w-6 h-6 rotate-180 group-hover:-translate-x-1 transition-transform" />
+        <button onClick={onBack} className="p-5 bg-white border-2 border-slate-100 rounded-3xl hover:bg-[#FACC15] hover:border-[#FACC15] transition-all shadow-sm group">
+          <ArrowLeftRight className="w-6 h-6 rotate-180 group-hover:scale-110 transition-transform" />
         </button>
         <div className="space-y-1">
           <h2 className="text-4xl font-black text-slate-900 tracking-tight">Comparison Intelligence</h2>
@@ -680,11 +695,11 @@ function ComparisonView({ city1, city2, data1, data2, onBack }: { city1: string,
             <h4 className="text-2xl font-black tracking-tight">Cross-Market Analytics</h4>
             <div className="flex flex-wrap gap-8">
                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full shadow-lg shadow-blue-200"></div>
+                  <div className="w-3 h-3 bg-[#111111] rounded-full shadow-lg"></div>
                   <span className="text-[10px] font-black text-slate-900 tracking-[0.2em] uppercase">{city1}</span>
                </div>
                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-indigo-600 rounded-full shadow-lg shadow-indigo-200"></div>
+                  <div className="w-3 h-3 bg-[#FACC15] rounded-full shadow-lg shadow-[#FACC15]/20"></div>
                   <span className="text-[10px] font-black text-slate-900 tracking-[0.2em] uppercase">{city2}</span>
                </div>
             </div>
@@ -692,51 +707,41 @@ function ComparisonView({ city1, city2, data1, data2, onBack }: { city1: string,
           <div className="h-[450px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={comparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                <defs>
-                  <linearGradient id="city1Gradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#3b82f6" />
-                    <stop offset="100%" stopColor="#2563eb" />
-                  </linearGradient>
-                  <linearGradient id="city2Gradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#818cf8" />
-                    <stop offset="100%" stopColor="#6366f1" />
-                  </linearGradient>
-                </defs>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                 <XAxis dataKey="name" tick={{ fontSize: 11, fontWeight: 900, fill: '#64748b' }} axisLine={false} tickLine={false} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 700, fill: '#94a3b8' }} />
                 <Tooltip cursor={{ fill: '#f8fafc' }} contentStyle={{ borderRadius: '24px', border: 'none', boxShadow: '0 25px 50px -12px rgb(0 0 0 / 0.25)', padding: '20px' }} />
-                <Bar dataKey={city1} fill="url(#city1Gradient)" radius={[10, 10, 0, 0]} barSize={45} />
-                <Bar dataKey={city2} fill="url(#city2Gradient)" radius={[10, 10, 0, 0]} barSize={45} />
+                <Bar dataKey={city1} fill="#111111" radius={[10, 10, 0, 0]} barSize={45} />
+                <Bar dataKey={city2} fill="#FACC15" radius={[10, 10, 0, 0]} barSize={45} />
               </BarChart>
             </ResponsiveContainer>
           </div>
         </div>
 
         <div className="lg:col-span-5 space-y-8">
-          <div className="bg-slate-900 p-12 rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden h-full flex flex-col justify-center">
+          <div className="bg-[#111111] p-12 rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden h-full flex flex-col justify-center">
             <div className="absolute -right-20 -bottom-20 opacity-5">
               <Smartphone className="w-96 h-96" />
             </div>
-            <h4 className="text-3xl font-black mb-10 flex items-center gap-4">
-              <Zap className="text-amber-400 w-8 h-8" /> Delta Insights
+            <h4 className="text-3xl font-black mb-10 flex items-center gap-4 text-[#FACC15]">
+              <Zap className="w-8 h-8" /> Delta Insights
             </h4>
             <div className="space-y-8 relative z-10">
               <div className="p-8 bg-white/5 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-all group">
-                <p className="text-[10px] text-blue-400 font-black uppercase tracking-[0.3em] mb-3">Consumer Choice</p>
-                <p className="text-2xl font-bold leading-tight">
+                <p className="text-[10px] text-[#FACC15] font-black uppercase tracking-[0.3em] mb-3">Consumer Choice</p>
+                <p className="text-2xl font-bold leading-tight text-slate-100">
                   {data1.stats.avgRating > data2.stats.avgRating ? city1 : city2} dominates in customer satisfaction with a {Math.abs(data1.stats.avgRating - data2.stats.avgRating).toFixed(2)} point lead.
                 </p>
               </div>
               <div className="p-8 bg-white/5 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-all group">
                 <p className="text-[10px] text-emerald-400 font-black uppercase tracking-[0.3em] mb-3">Economic Delta</p>
-                <p className="text-2xl font-bold leading-tight">
+                <p className="text-2xl font-bold leading-tight text-slate-100">
                   {data1.stats.avgCost < data2.stats.avgCost ? city1 : city2} is significantly more accessible for mass-market dining concepts.
                 </p>
               </div>
               <div className="p-8 bg-white/5 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-all group">
-                <p className="text-[10px] text-amber-400 font-black uppercase tracking-[0.3em] mb-3">Saturation Risk</p>
-                <p className="text-2xl font-bold leading-tight">
+                <p className="text-[10px] text-[#ef4444] font-black uppercase tracking-[0.3em] mb-3">Saturation Risk</p>
+                <p className="text-2xl font-bold leading-tight text-slate-100">
                   {data1.stats.count < data2.stats.count ? city1 : city2} is the high-growth opportunity zone due to lower current market density.
                 </p>
               </div>

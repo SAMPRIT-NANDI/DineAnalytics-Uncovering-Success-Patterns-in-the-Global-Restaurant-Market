@@ -13,14 +13,18 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto space-y-24 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto space-y-24 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Wave Background Element */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#111111] -z-10 rounded-l-[10rem] translate-x-1/4 opacity-10"></div>
+
       {/* Header */}
       <section className="text-center space-y-6 max-w-3xl mx-auto">
-        <div className="inline-flex p-4 bg-blue-50 text-blue-600 rounded-3xl mb-4 animate-float">
+        <div className="inline-flex p-4 bg-yellow-50 text-yellow-700 rounded-3xl mb-4 animate-float">
           <MessageSquare className="w-10 h-10" />
         </div>
-        <h1 className="text-6xl font-black text-slate-900 tracking-tighter leading-none animate-slide-up">
-          Let's Start a <span className="text-gradient">Conversation.</span>
+        <h1 className="text-8xl font-black text-slate-900 tracking-tighter leading-[0.8] animate-slide-up">
+          Let's Start a <br />
+          <span className="font-caveat text-[#FACC15] text-9xl lowercase">Conversation.</span>
         </h1>
         <p className="text-xl text-slate-500 font-medium leading-relaxed animate-fade-in delay-300">
           Whether you're looking for custom city reports or deep-dive restaurant analysis, our intelligence team is ready to assist.
@@ -30,10 +34,6 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         {/* Contact Form */}
         <div className="lg:col-span-7 bg-white p-12 rounded-[3.5rem] shadow-2xl shadow-slate-200 border border-slate-100 relative overflow-hidden animate-slide-left">
-          <div className="absolute top-0 right-0 p-12 opacity-5 -z-10">
-             <Sparkles className="w-64 h-64 text-blue-600" />
-          </div>
-          
           <h2 className="text-3xl font-black text-slate-900 mb-10 tracking-tight">Direct Inquiry</h2>
           
           {formState === "success" ? (
@@ -43,34 +43,34 @@ export default function ContactPage() {
               </div>
               <h3 className="text-3xl font-black text-slate-900">Message Dispatched!</h3>
               <p className="text-slate-500 font-medium max-w-xs mx-auto">Our analysts will review your request and get back to you within 24 hours.</p>
-              <button onClick={() => setFormState("idle")} className="text-blue-600 font-black uppercase tracking-widest text-xs hover:underline">Send another message</button>
+              <button onClick={() => setFormState("idle")} className="text-[#FACC15] font-black uppercase tracking-widest text-xs hover:underline">Send another message</button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
                   <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] ml-1">Full Identity</label>
-                  <input required type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl focus:outline-none focus:border-blue-600 focus:bg-white transition-all font-bold text-slate-900" />
+                  <input required type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl focus:outline-none focus:border-[#FACC15] focus:bg-white transition-all font-bold text-slate-900" />
                 </div>
                 <div className="space-y-3">
                   <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] ml-1">Email Node</label>
-                  <input required type="email" placeholder="john@enterprise.com" className="w-full px-6 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl focus:outline-none focus:border-blue-600 focus:bg-white transition-all font-bold text-slate-900" />
+                  <input required type="email" placeholder="john@enterprise.com" className="w-full px-6 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl focus:outline-none focus:border-[#FACC15] focus:bg-white transition-all font-bold text-slate-900" />
                 </div>
               </div>
               
               <div className="space-y-3">
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] ml-1">Analysis Subject</label>
-                <input required type="text" placeholder="Custom City Performance Report" className="w-full px-6 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl focus:outline-none focus:border-blue-600 focus:bg-white transition-all font-bold text-slate-900" />
+                <input required type="text" placeholder="Custom City Performance Report" className="w-full px-6 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl focus:outline-none focus:border-[#FACC15] focus:bg-white transition-all font-bold text-slate-900" />
               </div>
               
               <div className="space-y-3">
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] ml-1">Message Payload</label>
-                <textarea required rows={5} placeholder="Describe the data scope you need..." className="w-full px-6 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl focus:outline-none focus:border-blue-600 focus:bg-white transition-all font-bold text-slate-900 resize-none"></textarea>
+                <textarea required rows={5} placeholder="Describe the data scope you need..." className="w-full px-6 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl focus:outline-none focus:border-[#FACC15] focus:bg-white transition-all font-bold text-slate-900 resize-none"></textarea>
               </div>
               
               <button 
                 disabled={formState === "sending"}
-                className="w-full flex items-center justify-center gap-4 px-10 py-5 bg-blue-600 text-white font-black rounded-2xl hover:bg-blue-700 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-2xl shadow-blue-200 group disabled:opacity-70"
+                className="w-full flex items-center justify-center gap-4 px-10 py-5 bg-[#111111] text-white font-black rounded-2xl hover:bg-[#FACC15] hover:text-slate-900 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-2xl group disabled:opacity-70"
               >
                 {formState === "sending" ? (
                   <div className="w-6 h-6 border-3 border-white/30 border-t-white rounded-full animate-spin"></div>
@@ -86,20 +86,16 @@ export default function ContactPage() {
 
         {/* Sidebar Info */}
         <div className="lg:col-span-5 space-y-12 animate-slide-right">
-          <div className="bg-slate-900 p-12 rounded-[3.5rem] shadow-2xl text-white space-y-10 relative overflow-hidden group">
-            <div className="absolute -right-20 -bottom-20 opacity-5 group-hover:opacity-10 transition-opacity">
-               <Globe className="w-96 h-96" />
-            </div>
-            
-            <h3 className="text-3xl font-black tracking-tight relative z-10">Global Presence</h3>
+          <div className="bg-[#111111] p-12 rounded-[3.5rem] shadow-2xl text-white space-y-10 relative overflow-hidden group">
+            <h3 className="text-3xl font-black tracking-tight relative z-10 text-[#FACC15]">Global Presence</h3>
             
             <div className="space-y-8 relative z-10">
               <div className="flex items-start gap-6 group/item">
-                <div className="p-4 bg-white/10 rounded-2xl group-hover/item:bg-blue-600 transition-colors">
+                <div className="p-4 bg-white/10 rounded-2xl group-hover/item:bg-[#FACC15] group-hover/item:text-slate-900 transition-colors">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-1">Electronic Mail</p>
+                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Electronic Mail</p>
                   <p className="text-xl font-bold">intelligence@dineanalytics.com</p>
                 </div>
               </div>
@@ -109,7 +105,7 @@ export default function ContactPage() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-emerald-400 uppercase tracking-widest mb-1">Direct Line</p>
+                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Direct Line</p>
                   <p className="text-xl font-bold">+91 (800) 123-4567</p>
                 </div>
               </div>
@@ -119,7 +115,7 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1">HQ Location</p>
+                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">HQ Location</p>
                   <p className="text-xl font-bold">Innovation Hub, New Delhi</p>
                 </div>
               </div>

@@ -18,34 +18,32 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto space-y-24 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto space-y-24 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Wave Background Element */}
+      <div className="absolute top-0 right-0 w-1/4 h-full bg-[#111111] -z-10 rounded-l-[10rem] translate-x-1/3 opacity-10"></div>
+
       {/* Hero Section */}
-      <section className="relative text-center space-y-8 py-12 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-5">
-           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[120px] animate-pulse"></div>
-           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-600 rounded-full blur-[120px] animate-pulse delay-700"></div>
+      <section className="relative text-center space-y-8 py-12">
+        <div className="inline-flex items-center gap-3 px-6 py-2 bg-yellow-50 text-yellow-700 rounded-full border border-yellow-100 animate-fade-in">
+          <History className="w-5 h-5" />
+          <span className="text-xs font-black uppercase tracking-[0.3em]">Organic Intelligence</span>
         </div>
         
-        <div className="inline-flex items-center gap-3 px-6 py-2 bg-blue-50 text-blue-600 rounded-full border border-blue-100 animate-fade-in">
-          <History className="w-5 h-5 animate-spin-slow" />
-          <span className="text-xs font-black uppercase tracking-[0.3em]">Our Legacy & Future</span>
-        </div>
-        
-        <h1 className="text-7xl font-black text-slate-900 tracking-tighter leading-[0.9] animate-slide-up">
+        <h1 className="text-8xl font-black text-slate-900 tracking-tighter leading-[0.8] animate-slide-up">
           Engineering the <br />
-          <span className="text-gradient">Next Generation</span> of Dining.
+          <span className="font-caveat text-[#FACC15] text-9xl lowercase">Next Generation.</span>
         </h1>
         
         <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-300">
-          DineAnalytics isn't just a dashboard—it's a sophisticated intelligence engine designed to decode the complex DNA of the global restaurant market.
+          DineAnalytics decodes the complex DNA of the global restaurant market using proprietary machine learning models.
         </p>
       </section>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((stat, i) => (
-          <div key={i} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:border-blue-200 hover:shadow-2xl transition-all group relative overflow-hidden animate-slide-up" style={{ animationDelay: `${i * 100}ms` }}>
-            <div className={`p-4 bg-${stat.color}-50 text-${stat.color}-600 rounded-2xl w-fit mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all`}>
+          <div key={i} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:border-[#FACC15] hover:shadow-2xl transition-all group relative overflow-hidden animate-slide-up" style={{ animationDelay: `${i * 100}ms` }}>
+            <div className={`p-4 ${stat.color === 'yellow' || stat.color === 'amber' ? 'bg-[#FACC15] text-slate-900' : 'bg-slate-50 text-slate-600'} rounded-2xl w-fit mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all`}>
               <stat.icon className="w-6 h-6" />
             </div>
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">{stat.label}</p>
