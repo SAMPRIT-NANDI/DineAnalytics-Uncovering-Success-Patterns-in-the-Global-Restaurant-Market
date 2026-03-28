@@ -5,6 +5,34 @@
     "totalVotes": 1498645,
     "avgCostForTwo": 1199.21
   },
+  "mlInsights": {
+    "modelName": "Random Forest Regressor",
+    "accuracy_r2": 0.9411,
+    "error_mse": 0.134,
+    "featureImportance": [
+      {
+        "feature": "Price range",
+        "importance": 0.49
+      },
+      {
+        "feature": "Votes",
+        "importance": 97.15
+      },
+      {
+        "feature": "Average Cost for two",
+        "importance": 1.83
+      },
+      {
+        "feature": "Delivery_Code",
+        "importance": 0.35
+      },
+      {
+        "feature": "Booking_Code",
+        "importance": 0.18
+      }
+    ],
+    "predictionNote": "Our model predicts restaurant ratings with 94.1% variance explained based on features like votes, price, and services."
+  },
   "topCuisines": [
     {
       "name": "North Indian",
