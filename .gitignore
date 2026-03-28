@@ -1,0 +1,25 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Local configuration
+.env
+
+# Large datasets (optional, but keeping it for now if you want to push it)
+# Dataset  (1).csv
+
+# Log files
+*.log

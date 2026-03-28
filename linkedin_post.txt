@@ -1,0 +1,18 @@
+🚀 Exciting news! I've just completed a Data Analysis Internship project on Restaurant Data Insights! 🍴📊
+
+In this project for Cognifyz Technologies, I dived deep into a restaurant dataset to extract meaningful insights using Python, Pandas, Matplotlib, and Seaborn. Here are some of the key takeaways:
+
+🔹 Top Cuisines: North Indian, Chinese, and Fast Food dominate the market, together appearing in nearly 70% of the restaurants.
+🔹 City Analysis: New Delhi has the highest restaurant count, but smaller cities like Inner City show higher average customer satisfaction.
+🔹 Price vs Services: Premium restaurants (Price Range 4) prioritize table booking (fine-dining experience), while mid-range restaurants (Price Range 2) excel in online delivery.
+🔹 Impact of Services: Restaurants offering online delivery tend to have significantly higher average ratings (3.25) compared to those without (2.47).
+
+This project helped me enhance my skills in:
+✅ Data cleaning and preprocessing
+✅ Exploratory Data Analysis (EDA)
+✅ Data visualization and insight generation
+✅ Real-world dataset handling
+
+Check out my GitHub repository for the full analysis, code, and visualizations! 📁🔗
+
+#DataAnalysis #DataScience #Python #Pandas #Matplotlib #Seaborn #RestaurantInsights #CognifyzTechnologies #InternshipProject #DataVisualization #EDA
