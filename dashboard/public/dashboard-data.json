@@ -1,0 +1,922 @@
+{
+  "stats": {
+    "totalRestaurants": 9551,
+    "avgRating": 2.67,
+    "totalVotes": 1498645,
+    "avgCostForTwo": 1199.21
+  },
+  "topCuisines": [
+    {
+      "name": "North Indian",
+      "value": 3960
+    },
+    {
+      "name": "Chinese",
+      "value": 2735
+    },
+    {
+      "name": "Fast Food",
+      "value": 1986
+    },
+    {
+      "name": "Mughlai",
+      "value": 995
+    },
+    {
+      "name": "Italian",
+      "value": 764
+    },
+    {
+      "name": "Bakery",
+      "value": 745
+    },
+    {
+      "name": "Continental",
+      "value": 736
+    },
+    {
+      "name": "Cafe",
+      "value": 703
+    },
+    {
+      "name": "Desserts",
+      "value": 653
+    },
+    {
+      "name": "South Indian",
+      "value": 636
+    }
+  ],
+  "priceDistribution": [
+    {
+      "range": "1",
+      "count": 4444
+    },
+    {
+      "range": "2",
+      "count": 3113
+    },
+    {
+      "range": "3",
+      "count": 1408
+    },
+    {
+      "range": "4",
+      "count": 586
+    }
+  ],
+  "topCities": [
+    {
+      "city": "Inner City",
+      "rating": 4.9
+    },
+    {
+      "city": "Quezon City",
+      "rating": 4.8
+    },
+    {
+      "city": "Makati City",
+      "rating": 4.65
+    },
+    {
+      "city": "Pasig City",
+      "rating": 4.63
+    },
+    {
+      "city": "Mandaluyong City",
+      "rating": 4.62
+    },
+    {
+      "city": "Beechworth",
+      "rating": 4.6
+    },
+    {
+      "city": "London",
+      "rating": 4.54
+    },
+    {
+      "city": "Taguig City",
+      "rating": 4.53
+    },
+    {
+      "city": "Secunderabad",
+      "rating": 4.5
+    },
+    {
+      "city": "Lincoln",
+      "rating": 4.5
+    }
+  ],
+  "deliveryImpact": [
+    {
+      "delivery": "No",
+      "rating": 2.47
+    },
+    {
+      "delivery": "Yes",
+      "rating": 3.25
+    }
+  ],
+  "restaurants": [
+    {
+      "Restaurant Name": "Le Petit Souffle",
+      "City": "Makati City",
+      "Cuisines": "French, Japanese, Desserts",
+      "Aggregate rating": 4.8,
+      "Votes": 314,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Izakaya Kikufuji",
+      "City": "Makati City",
+      "Cuisines": "Japanese",
+      "Aggregate rating": 4.5,
+      "Votes": 591,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Heat - Edsa Shangri-La",
+      "City": "Mandaluyong City",
+      "Cuisines": "Seafood, Asian, Filipino, Indian",
+      "Aggregate rating": 4.4,
+      "Votes": 270,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Ooma",
+      "City": "Mandaluyong City",
+      "Cuisines": "Japanese, Sushi",
+      "Aggregate rating": 4.9,
+      "Votes": 365,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Sambo Kojin",
+      "City": "Mandaluyong City",
+      "Cuisines": "Japanese, Korean",
+      "Aggregate rating": 4.8,
+      "Votes": 229,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Din Tai Fung",
+      "City": "Mandaluyong City",
+      "Cuisines": "Chinese",
+      "Aggregate rating": 4.4,
+      "Votes": 336,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Buffet 101",
+      "City": "Pasay City",
+      "Cuisines": "Asian, European",
+      "Aggregate rating": 4.0,
+      "Votes": 520,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Vikings",
+      "City": "Pasay City",
+      "Cuisines": "Seafood, Filipino, Asian, European",
+      "Aggregate rating": 4.2,
+      "Votes": 677,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Spiral - Sofitel Philippine Plaza Manila",
+      "City": "Pasay City",
+      "Cuisines": "European, Asian, Indian",
+      "Aggregate rating": 4.9,
+      "Votes": 621,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Locavore",
+      "City": "Pasig City",
+      "Cuisines": "Filipino",
+      "Aggregate rating": 4.8,
+      "Votes": 532,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Silantro Fil-Mex",
+      "City": "Pasig City",
+      "Cuisines": "Filipino, Mexican",
+      "Aggregate rating": 4.9,
+      "Votes": 1070,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Mad Mark's Creamery & Good Eats",
+      "City": "Pasig City",
+      "Cuisines": "American, Ice Cream, Desserts",
+      "Aggregate rating": 4.2,
+      "Votes": 488,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Silantro Fil-Mex",
+      "City": "Quezon City",
+      "Cuisines": "Filipino, Mexican",
+      "Aggregate rating": 4.8,
+      "Votes": 294,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Guevarra's",
+      "City": "San Juan City",
+      "Cuisines": "Filipino",
+      "Aggregate rating": 4.2,
+      "Votes": 458,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Sodam Korean Restaurant",
+      "City": "San Juan City",
+      "Cuisines": "Korean",
+      "Aggregate rating": 4.3,
+      "Votes": 223,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Cafe Arabelle",
+      "City": "Santa Rosa",
+      "Cuisines": "Cafe, American, Italian, Filipino",
+      "Aggregate rating": 3.6,
+      "Votes": 29,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Nonna's Pasta & Pizzeria",
+      "City": "Santa Rosa",
+      "Cuisines": "Italian, Pizza",
+      "Aggregate rating": 4.0,
+      "Votes": 72,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Balay Dako",
+      "City": "Tagaytay City",
+      "Cuisines": "Filipino",
+      "Aggregate rating": 4.5,
+      "Votes": 211,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Hobing Korean Dessert Cafe",
+      "City": "Taguig City",
+      "Cuisines": "Cafe, Korean, Desserts",
+      "Aggregate rating": 4.5,
+      "Votes": 118,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Wildflour Cafe + Bakery",
+      "City": "Taguig City",
+      "Cuisines": "Cafe, Bakery, American, Italian",
+      "Aggregate rating": 4.4,
+      "Votes": 392,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "NIU by Vikings",
+      "City": "Taguig City",
+      "Cuisines": "Seafood, American, Mediterranean, Japanese",
+      "Aggregate rating": 4.7,
+      "Votes": 535,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "The Food Hall by Todd English",
+      "City": "Taguig City",
+      "Cuisines": "American, Asian, Italian, Seafood",
+      "Aggregate rating": 4.5,
+      "Votes": 618,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Chez Michou",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Fast Food, French",
+      "Aggregate rating": 3.0,
+      "Votes": 6,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Caf\ufffd\ufffd Daniel Briand",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Cafe",
+      "Aggregate rating": 3.8,
+      "Votes": 9,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Casa do Biscoito Mineiro",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Bakery",
+      "Aggregate rating": 3.7,
+      "Votes": 11,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Maori",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Brazilian",
+      "Aggregate rating": 3.8,
+      "Votes": 11,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Pizza \ufffd\ufffd Bessa",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Pizza",
+      "Aggregate rating": 3.2,
+      "Votes": 11,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Sushi Loko",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Japanese",
+      "Aggregate rating": 3.1,
+      "Votes": 10,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Beirute",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Arabian",
+      "Aggregate rating": 3.7,
+      "Votes": 8,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "New Koto",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Japanese",
+      "Aggregate rating": 3.7,
+      "Votes": 5,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Sandubas Caf\ufffd\ufffd",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Brazilian, Cafe",
+      "Aggregate rating": 0.0,
+      "Votes": 2,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Villa Tevere",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Italian",
+      "Aggregate rating": 4.1,
+      "Votes": 12,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Rovereto",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Pizza",
+      "Aggregate rating": 3.1,
+      "Votes": 9,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Buena Carne",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Bar Food, Brazilian",
+      "Aggregate rating": 3.6,
+      "Votes": 9,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Taco Pep",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Mexican, Grill",
+      "Aggregate rating": 4.3,
+      "Votes": 29,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Coco Bambu",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "International",
+      "Aggregate rating": 4.2,
+      "Votes": 17,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Tayp\ufffd\ufffd",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Peruvian, Latin American",
+      "Aggregate rating": 3.6,
+      "Votes": 5,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Outback Steakhouse",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "American, Grill",
+      "Aggregate rating": 4.0,
+      "Votes": 10,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Manzu\ufffd\ufffd",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Seafood",
+      "Aggregate rating": 3.2,
+      "Votes": 6,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Coco Bambu",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "International",
+      "Aggregate rating": 4.9,
+      "Votes": 30,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Gero",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "Italian",
+      "Aggregate rating": 3.3,
+      "Votes": 8,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Brazilian American Burgers",
+      "City": "Bras\ufffd_lia",
+      "Cuisines": "American, Burger",
+      "Aggregate rating": 3.6,
+      "Votes": 9,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Pesqueiro Eco Gourmet",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Seafood, Bar Food, Brazilian",
+      "Aggregate rating": 4.0,
+      "Votes": 7,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Confeitaria Colombo",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Desserts, Cafe",
+      "Aggregate rating": 4.8,
+      "Votes": 29,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Bibi",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Juices, Healthy Food",
+      "Aggregate rating": 4.7,
+      "Votes": 24,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Cervantes",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Beverages, Bar Food, Fast Food",
+      "Aggregate rating": 4.5,
+      "Votes": 29,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Amir",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Lebanese",
+      "Aggregate rating": 4.2,
+      "Votes": 11,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "TT Burger",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Burger",
+      "Aggregate rating": 4.8,
+      "Votes": 19,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Braseiro da G\ufffd\ufffdvea",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian, Bar Food",
+      "Aggregate rating": 4.9,
+      "Votes": 40,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Balada Mix",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian, Healthy Food, Juices, Pizza",
+      "Aggregate rating": 4.6,
+      "Votes": 21,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Garota de Ipanema",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian, Bar Food",
+      "Aggregate rating": 4.9,
+      "Votes": 49,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Zaz\ufffd\ufffd Bistr\ufffd\ufffd Tropical",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian",
+      "Aggregate rating": 4.6,
+      "Votes": 21,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Fil\ufffd\ufffd de Ouro",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian",
+      "Aggregate rating": 4.3,
+      "Votes": 14,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "D.O.C Ristorante",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Italian",
+      "Aggregate rating": 4.0,
+      "Votes": 5,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Sushi Leblon",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Japanese",
+      "Aggregate rating": 4.6,
+      "Votes": 25,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Talho Capixaba",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Bakery, Sandwich, Brazilian",
+      "Aggregate rating": 4.4,
+      "Votes": 13,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Leme Light",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian",
+      "Aggregate rating": 4.2,
+      "Votes": 7,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Shirley",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian, Seafood",
+      "Aggregate rating": 4.2,
+      "Votes": 8,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Quiosque Chopp Brahma",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Bar Food, Brazilian",
+      "Aggregate rating": 0.0,
+      "Votes": 1,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Apraz\ufffd_vel",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian",
+      "Aggregate rating": 4.7,
+      "Votes": 44,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Aconchego Carioca",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian, Bar Food",
+      "Aggregate rating": 4.6,
+      "Votes": 24,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Garota de Ipanema",
+      "City": "Rio de Janeiro",
+      "Cuisines": "Brazilian, Bar Food",
+      "Aggregate rating": 4.3,
+      "Votes": 10,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Cantina Famiglia Mancini",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Italian, Pizza",
+      "Aggregate rating": 4.5,
+      "Votes": 49,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Templo da Carne - Marcos Bassi",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Steak, BBQ",
+      "Aggregate rating": 4.4,
+      "Votes": 17,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Gopala Hari",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Indian",
+      "Aggregate rating": 3.1,
+      "Votes": 5,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Jiquitaia",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Brazilian",
+      "Aggregate rating": 4.1,
+      "Votes": 15,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Skye - Hotel Unique",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Beverages, International",
+      "Aggregate rating": 4.8,
+      "Votes": 59,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Les 3 Brasseurs",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "French, Brazilian, Beverages",
+      "Aggregate rating": 4.6,
+      "Votes": 30,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Red Steak & Burger",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Brazilian, Grill",
+      "Aggregate rating": 3.9,
+      "Votes": 5,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Cantinho da Gula",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Brazilian",
+      "Aggregate rating": 0.0,
+      "Votes": 0,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Paris 6 Classique",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "French",
+      "Aggregate rating": 3.4,
+      "Votes": 73,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Kawa Sushi",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Sushi, Japanese",
+      "Aggregate rating": 3.5,
+      "Votes": 9,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "A Figueira Rubaiyat",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "BBQ, Grill, Brazilian",
+      "Aggregate rating": 4.3,
+      "Votes": 39,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Kinoshita",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Sushi",
+      "Aggregate rating": 3.9,
+      "Votes": 12,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Meats",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Gourmet Fast Food, Burger",
+      "Aggregate rating": 4.3,
+      "Votes": 68,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Paribar",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Brazilian, Italian",
+      "Aggregate rating": 4.3,
+      "Votes": 46,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Terra\ufffd_o It\ufffd\ufffdlia",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Italian",
+      "Aggregate rating": 4.4,
+      "Votes": 37,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Divino Fog\ufffd\ufffdo",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Brazilian, Mineira",
+      "Aggregate rating": 0.0,
+      "Votes": 2,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Super Grill",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Brazilian",
+      "Aggregate rating": 0.0,
+      "Votes": 2,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Esquina Mocot\ufffd_",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Brazilian, North Eastern",
+      "Aggregate rating": 4.4,
+      "Votes": 22,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Veloso",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Brazilian, Bar Food, Beverages",
+      "Aggregate rating": 4.6,
+      "Votes": 58,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Sainte Marie Gastronomia",
+      "City": "S\ufffd\ufffdo Paulo",
+      "Cuisines": "Lebanese, Arabian",
+      "Aggregate rating": 4.1,
+      "Votes": 11,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Austin's BBQ and Oyster Bar",
+      "City": "Albany",
+      "Cuisines": "BBQ, Burger, Seafood",
+      "Aggregate rating": 3.3,
+      "Votes": 35,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "BJ's Country Buffet",
+      "City": "Albany",
+      "Cuisines": "American, BBQ",
+      "Aggregate rating": 3.3,
+      "Votes": 25,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Cookie Shoppe",
+      "City": "Albany",
+      "Cuisines": "Unknown",
+      "Aggregate rating": 3.4,
+      "Votes": 34,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "El Vaquero Mexican Restaurant",
+      "City": "Albany",
+      "Cuisines": "Mexican",
+      "Aggregate rating": 3.4,
+      "Votes": 45,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Elements Coffee Co - Northwest",
+      "City": "Albany",
+      "Cuisines": "Coffee and Tea, Sandwich",
+      "Aggregate rating": 3.4,
+      "Votes": 26,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Pearly's Famous Country Cookng",
+      "City": "Albany",
+      "Cuisines": "Unknown",
+      "Aggregate rating": 3.4,
+      "Votes": 36,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Chick-fil-A",
+      "City": "Albany",
+      "Cuisines": "Fast Food",
+      "Aggregate rating": 3.5,
+      "Votes": 67,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Guang Zhou Chinese Restaurant",
+      "City": "Albany",
+      "Cuisines": "Asian, Chinese, Vegetarian",
+      "Aggregate rating": 3.9,
+      "Votes": 141,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Harvest Moon",
+      "City": "Albany",
+      "Cuisines": "Pizza, Bar Food, Sandwich",
+      "Aggregate rating": 3.7,
+      "Votes": 147,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Henry Campbell's Steakhouse",
+      "City": "Albany",
+      "Cuisines": "Steak, Tapas, Bar Food",
+      "Aggregate rating": 3.5,
+      "Votes": 51,
+      "Price range": 4
+    },
+    {
+      "Restaurant Name": "Hong Kong Cafe",
+      "City": "Albany",
+      "Cuisines": "Chinese, Seafood, Vegetarian",
+      "Aggregate rating": 3.6,
+      "Votes": 88,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "House of China Restaurant II",
+      "City": "Albany",
+      "Cuisines": "Chinese",
+      "Aggregate rating": 3.8,
+      "Votes": 153,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Jimmie's Hot Dogs",
+      "City": "Albany",
+      "Cuisines": "Unknown",
+      "Aggregate rating": 3.9,
+      "Votes": 160,
+      "Price range": 1
+    },
+    {
+      "Restaurant Name": "Locos Grill & Pub",
+      "City": "Albany",
+      "Cuisines": "American, Burger, Sandwich",
+      "Aggregate rating": 3.5,
+      "Votes": 57,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Longhorn Steakhouse",
+      "City": "Albany",
+      "Cuisines": "American, Steak",
+      "Aggregate rating": 3.5,
+      "Votes": 58,
+      "Price range": 2
+    },
+    {
+      "Restaurant Name": "Mikata Japanese Steakhouse",
+      "City": "Albany",
+      "Cuisines": "Japanese, Steak, Sushi",
+      "Aggregate rating": 3.6,
+      "Votes": 115,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "Shogun Japanese Steak House",
+      "City": "Albany",
+      "Cuisines": "Japanese, Steak, Sushi",
+      "Aggregate rating": 3.5,
+      "Votes": 51,
+      "Price range": 3
+    },
+    {
+      "Restaurant Name": "The Catch Seafood Room & Oyster Bar",
+      "City": "Albany",
+      "Cuisines": "Seafood, Tapas, Bar Food",
+      "Aggregate rating": 3.8,
+      "Votes": 250,
+      "Price range": 3
+    }
+  ]
+}
