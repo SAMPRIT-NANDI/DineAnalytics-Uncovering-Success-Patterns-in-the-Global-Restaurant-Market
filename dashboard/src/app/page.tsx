@@ -12,7 +12,7 @@ import {
   ArrowLeftRight, FileText, Download, Send, Globe, Zap, AlertCircle, X, Mail, CheckCircle2,
   TrendingDown, Activity, Layers, Smartphone, Sparkles
 } from 'lucide-react';
-import { useSession, signOut } from "next-auth/react";
+import { useUser, useClerk } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
 interface CityData {
@@ -49,8 +49,11 @@ interface DashboardData {
 
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#f97316'];
 
+import AIChatBot from '@/components/AIChatBot';
+
 export default function Dashboard() {
-  const { data: session, status } = useSession();
+  const { user, isLoaded } = useUser();
+  const { signOut } = useClerk();
   const router = useRouter();
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -59,16 +62,18 @@ export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [comparisonCity, setComparisonCity] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<"global" | "city" | "compare">("global");
+  const [viewMode, setViewMode] = useState<"global" | "city" | "compare" | "chat">("global");
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [emailStatus, setEmailStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [emailInput, setEmailInput] = useState("");
 
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
+
   useEffect(() => {
-    if (status === "unauthenticated") {
+    if (isLoaded && !user) {
       router.push("/login");
     }
-  }, [status, router]);
+  }, [isLoaded, user, router]);
 
   useEffect(() => {
     fetch('/dashboard-data.json')
@@ -134,7 +139,7 @@ export default function Dashboard() {
     return data.allCities.filter(c => c.toLowerCase().includes(searchQuery.toLowerCase())).slice(0, 5);
   }, [data, searchQuery]);
 
-  if (status === "loading" || loading || !data) {
+  if (!isLoaded || loading || !data) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[80vh] bg-white">
         <div className="relative">
@@ -225,6 +230,12 @@ export default function Dashboard() {
             >
               GLOBAL
             </button>
+            <button 
+              onClick={() => setViewMode("chat")}
+              className={`px-8 py-4 rounded-2xl text-[10px] font-black tracking-[0.2em] transition-all ${viewMode === 'chat' ? 'bg-[#FACC15] text-slate-900 shadow-2xl' : 'text-slate-400 hover:text-slate-900'}`}
+            >
+              AI CHAT
+            </button>
             <div className="w-px h-6 bg-slate-200 mx-2"></div>
             <select 
               className="bg-transparent border-none text-[10px] font-black text-slate-900 focus:ring-0 cursor-pointer pr-12 uppercase tracking-[0.2em]"
@@ -246,8 +257,10 @@ export default function Dashboard() {
           <GlobalView data={data} onCitySelect={handleCitySelect} />
         ) : viewMode === "city" ? (
           <CityView city={selectedCity!} cityData={data.cities[selectedCity!]} onCompare={toggleComparison} onBack={() => setViewMode("global")} onEmailRequest={() => setIsReportModalOpen(true)} />
-        ) : (
+        ) : viewMode === "compare" ? (
           <ComparisonView city1={selectedCity!} city2={comparisonCity!} data1={data.cities[selectedCity!]} data2={data.cities[comparisonCity!]} onBack={() => setViewMode("city")} />
+        ) : (
+          <AIChatBot apiKey={googleMapsApiKey} onBack={() => setViewMode("global")} />
         )}
       </div>
 
